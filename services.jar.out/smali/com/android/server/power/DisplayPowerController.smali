@@ -2424,21 +2424,18 @@
 
     iput-object v0, p0, Lcom/android/server/power/DisplayPowerController;->mElectronBeamOffAnimator:Landroid/animation/ObjectAnimator;
 
-    .line 575
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerController;->mElectronBeamOffAnimator:Landroid/animation/ObjectAnimator;
 
-    const-wide/16 v1, 0x190
+    const-wide/16 v1, 0x0
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 576
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerController;->mElectronBeamOffAnimator:Landroid/animation/ObjectAnimator;
 
     iget-object v1, p0, Lcom/android/server/power/DisplayPowerController;->mAnimatorListener:Landroid/animation/Animator$AnimatorListener;
 
     invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 578
     new-instance v0, Lcom/android/server/power/RampAnimator;
 
     iget-object v1, p0, Lcom/android/server/power/DisplayPowerController;->mPowerState:Lcom/android/server/power/DisplayPowerState;
@@ -2908,36 +2905,31 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 814
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerController;->mPowerState:Lcom/android/server/power/DisplayPowerState;
 
     invoke-virtual {v0, p1}, Lcom/android/server/power/DisplayPowerState;->setScreenOn(Z)V
 
-    .line 815
     if-eqz p1, :cond_1
 
-    .line 816
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerController;->mNotifier:Lcom/android/server/power/Notifier;
 
     invoke-virtual {v0}, Lcom/android/server/power/Notifier;->onScreenOn()V
 
-    .line 817
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerController;->mContext:Landroid/content/Context;
 
     invoke-direct {p0, v0}, Lcom/android/server/power/DisplayPowerController;->updateButtons(Landroid/content/Context;)V
 
-    .line 823
-    :cond_0
     :goto_0
+    invoke-static {p1}, Lcom/android/server/power/ButtonLightController;->setScreenOn(Z)V
+
+    :cond_0
     return-void
 
-    .line 819
     :cond_1
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerController;->mNotifier:Lcom/android/server/power/Notifier;
 
     invoke-virtual {v0}, Lcom/android/server/power/Notifier;->onScreenOff()V
 
-    .line 820
     invoke-direct {p0}, Lcom/android/server/power/DisplayPowerController;->updateButtonsOff()V
 
     goto :goto_0
