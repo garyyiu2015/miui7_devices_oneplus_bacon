@@ -419,74 +419,12 @@
 .end method
 
 .method private getEncryptionStatus()I
-    .locals 5
+    .locals 1
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    .line 2593
-    const-string v3, "vold.pfe"
-
-    const-string v4, ""
-
-    invoke-static {v3, v4}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 2594
-    .local v0, "pfeStatus":Ljava/lang/String;
-    const-string v3, "activated"
-
-    invoke-virtual {v3, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    .line 2604
-    :cond_0
-    :goto_0
-    return v2
-
-    .line 2598
-    :cond_1
-    const-string v3, "ro.crypto.state"
-
-    const-string v4, "unsupported"
-
-    invoke-static {v3, v4}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 2599
-    .local v1, "status":Ljava/lang/String;
-    const-string v3, "encrypted"
-
-    invoke-virtual {v3, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    .line 2600
-    const/4 v2, 0x3
-
-    goto :goto_0
-
-    .line 2601
-    :cond_2
-    const-string v3, "unencrypted"
-
-    invoke-virtual {v3, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    .line 2602
-    const/4 v2, 0x1
-
-    goto :goto_0
+    return v0
 .end method
 
 .method private getIPowerManager()Landroid/os/IPowerManager;

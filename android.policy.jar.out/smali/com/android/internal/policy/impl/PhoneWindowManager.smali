@@ -403,7 +403,7 @@
 
 .field private mPowerKeyTriggered:Z
 
-.field private final mPowerLongPress:Ljava/lang/Runnable;
+.field private mPowerLongPress:Ljava/lang/Runnable;
 
 .field mPowerManager:Landroid/os/PowerManager;
 
@@ -14277,6 +14277,8 @@
     move-result v20
 
     if-eqz v20, :cond_1f
+
+    if-eqz p3, :cond_1f
 
     .line 4232
     invoke-interface/range {v18 .. v18}, Lcom/android/internal/telephony/ITelephony;->endCall()Z

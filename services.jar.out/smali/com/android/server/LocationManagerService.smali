@@ -4446,7 +4446,7 @@
     return-void
 .end method
 
-.method private removeUpdatesLocked(Lcom/android/server/LocationManagerService$Receiver;)V
+.method removeUpdatesLocked(Lcom/android/server/LocationManagerService$Receiver;)V
     .locals 9
     .param p1, "receiver"    # Lcom/android/server/LocationManagerService$Receiver;
 
@@ -7191,6 +7191,8 @@
     .line 2543
     .end local v10    # "provider":Lcom/android/server/location/LocationProviderInterface;
     :cond_c
+    invoke-static/range {p1 .. p3}, Lcom/android/server/LocationManagerServiceInjector;->dumpLp(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
+
     monitor-exit v15
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -9451,7 +9453,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_miui_4
 
     move-object/from16 v0, p4
 
@@ -9459,7 +9461,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_4
+    if-nez v1, :cond_miui_4
 
     iget-object v13, p0, Lcom/android/server/LocationManagerService;->mLock:Ljava/lang/Object;
 
@@ -9483,7 +9485,7 @@
 
     .line 1489
     .local v3, "receiver":Lcom/android/server/LocationManagerService$Receiver;
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_miui_3
 
     move-object v1, p0
 
@@ -9492,15 +9494,15 @@
     move-object/from16 v6, p4
 
     .line 1490
-    invoke-direct/range {v1 .. v6}, Lcom/android/server/LocationManagerService;->requestLocationUpdatesLocked(Landroid/location/LocationRequest;Lcom/android/server/LocationManagerService$Receiver;IILjava/lang/String;)V
+    invoke-virtual/range {v1 .. v6}, Lcom/android/server/LocationManagerService;->requestLocationUpdatesLocked(Landroid/location/LocationRequest;Lcom/android/server/LocationManagerService$Receiver;IILjava/lang/String;)V
 
     .line 1493
-    :cond_3
+    :cond_miui_3
     monitor-exit v13
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1495
+    :cond_miui_4
     invoke-static {v10, v11}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     .line 1497

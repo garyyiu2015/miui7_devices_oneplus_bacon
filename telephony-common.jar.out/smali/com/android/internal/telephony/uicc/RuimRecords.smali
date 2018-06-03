@@ -649,6 +649,21 @@
     const/16 v4, 0x64
 
     .line 705
+    iget-object v0, p0, Lcom/android/internal/telephony/uicc/RuimRecords;->mDestroyed:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_miui_0
+
+    const-string v0, "IccRecords has been disposed"
+
+    invoke-virtual {p0, v0}, Lcom/android/internal/telephony/uicc/RuimRecords;->log(Ljava/lang/String;)V
+
+    return-void
+
+    :cond_miui_0
     iget-boolean v0, p0, Lcom/android/internal/telephony/uicc/RuimRecords;->mRecordsRequired:Z
 
     if-eqz v0, :cond_0
@@ -1307,7 +1322,7 @@
     goto :goto_0
 .end method
 
-.method private setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
+.method private setSystemProperty_aosp(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
     .param p1, "key"    # Ljava/lang/String;
     .param p2, "val"    # Ljava/lang/String;
@@ -2448,7 +2463,7 @@
     .line 660
     const-string v1, "gsm.sim.operator.numeric"
 
-    invoke-direct {p0, v1, v0}, Lcom/android/internal/telephony/uicc/RuimRecords;->setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p0, v1, v0}, Lcom/android/internal/telephony/uicc/RuimRecords;->setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 665
     :goto_0
@@ -2504,7 +2519,7 @@
 
     move-result-object v2
 
-    invoke-direct {p0, v1, v2}, Lcom/android/internal/telephony/uicc/RuimRecords;->setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0, v1, v2}, Lcom/android/internal/telephony/uicc/RuimRecords;->setSystemProperty_aosp(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 673
     :goto_1

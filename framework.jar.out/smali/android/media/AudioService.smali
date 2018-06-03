@@ -11231,6 +11231,12 @@
 
     .line 1406
     :goto_1
+    iget-object v0, p0, Landroid/media/AudioService;->mContext:Landroid/content/Context;
+
+    invoke-static {v0, p1}, Lmiui/util/AudioManagerHelper;->getValidatedRingerMode(Landroid/content/Context;I)I
+
+    move-result p1
+
     invoke-virtual {p0}, Landroid/media/AudioService;->getRingerMode()I
 
     move-result v0

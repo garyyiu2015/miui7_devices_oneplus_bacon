@@ -69,18 +69,6 @@
 
     iput-object p13, p0, Lcom/android/server/AlarmManagerService$Alarm;->workSource:Landroid/os/WorkSource;
 
-    invoke-static {}, Landroid/os/Binder;->getCallingUid()I
-
-    move-result v0
-
-    iput v0, p0, Lcom/android/server/AlarmManagerService$Alarm;->uid:I
-
-    invoke-static {}, Landroid/os/Binder;->getCallingPid()I
-
-    move-result v0
-
-    iput v0, p0, Lcom/android/server/AlarmManagerService$Alarm;->pid:I
-
     #add
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
