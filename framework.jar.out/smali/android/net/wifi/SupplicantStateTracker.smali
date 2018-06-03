@@ -454,33 +454,38 @@
 .end method
 
 .method private handleNetworkConnectionFailure(II)V
-    .locals 1
+    .locals 2
     .param p1, "netId"    # I
     .param p2, "disableReason"    # I
 
     .prologue
-    .line 98
     iget-boolean v0, p0, Landroid/net/wifi/SupplicantStateTracker;->mNetworksDisabledDuringConnect:Z
 
     if-eqz v0, :cond_0
 
-    .line 99
     iget-object v0, p0, Landroid/net/wifi/SupplicantStateTracker;->mWifiConfigStore:Landroid/net/wifi/WifiConfigStore;
 
     invoke-virtual {v0}, Landroid/net/wifi/WifiConfigStore;->enableAllNetworks()V
 
-    .line 100
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/net/wifi/SupplicantStateTracker;->mNetworksDisabledDuringConnect:Z
 
-    .line 103
     :cond_0
     iget-object v0, p0, Landroid/net/wifi/SupplicantStateTracker;->mWifiConfigStore:Landroid/net/wifi/WifiConfigStore;
 
     invoke-virtual {v0, p1, p2}, Landroid/net/wifi/WifiConfigStore;->disableNetwork(II)Z
 
-    .line 104
+    iget-object v0, p0, Landroid/net/wifi/SupplicantStateTracker;->mContext:Landroid/content/Context;
+
+    iget-object v1, p0, Landroid/net/wifi/SupplicantStateTracker;->mWifiConfigStore:Landroid/net/wifi/WifiConfigStore;
+
+    invoke-virtual {v1}, Landroid/net/wifi/WifiConfigStore;->getConfiguredNetworks()Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-static {v0, v1, p1}, Landroid/net/wifi/SupplicantStateTrackerInjector;->handleNetworkConnectionFailure(Landroid/content/Context;Ljava/util/List;I)V
+
     return-void
 .end method
 
@@ -739,4 +744,14 @@
 
     .line 360
     return-void
+.end method
+
+.method static synthetic access_mAuthenticationFailuresCount(Landroid/net/wifi/SupplicantStateTracker;)I
+    .locals 1
+    .param p0, "x0"    # Landroid/net/wifi/SupplicantStateTracker;
+
+    .prologue
+    iget v0, p0, Landroid/net/wifi/SupplicantStateTracker;->mAuthenticationFailuresCount:I
+
+    return v0
 .end method
