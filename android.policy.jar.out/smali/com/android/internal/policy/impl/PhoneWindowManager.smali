@@ -217,6 +217,8 @@
 
 .field mBroadcastWakeLock:Landroid/os/PowerManager$WakeLock;
 
+.field private mButtonLightEnabled:Z
+
 .field mCarDockEnablesAccelerometer:Z
 
 .field mCarDockIntent:Landroid/content/Intent;
@@ -486,9 +488,11 @@
 
 .field private mPowerKeyTriggered:Z
 
-.field private final mPowerLongPress:Ljava/lang/Runnable;
+.field private mPowerLongPress:Ljava/lang/Runnable;
 
 .field mPowerManager:Landroid/os/PowerManager;
+
+.field private final mQuickBootLock:Ljava/lang/Object;
 
 .field mPowerMenuReceiver:Lcom/android/internal/policy/impl/PhoneWindowManager$PowerMenuReceiver;
 
@@ -18450,6 +18454,8 @@
     move-result v19
 
     if-eqz v19, :cond_27
+
+    if-eqz p3, :cond_27
 
     .line 4880
     invoke-interface/range {v17 .. v17}, Lcom/android/internal/telephony/ITelephony;->endCall()Z

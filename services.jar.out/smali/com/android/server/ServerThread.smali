@@ -2831,6 +2831,22 @@
     .line 901
     :cond_1f
     :goto_42
+    move-object/from16 v0, p0
+
+    iget-object v7, v0, Lcom/android/server/ServerThread;->mSystemServiceManager:Lcom/android/server/SystemServiceManager;
+
+    const-class v9, Lcom/android/server/job/JobSchedulerService;
+
+    invoke-virtual {v7, v9}, Lcom/android/server/SystemServiceManager;->startService(Ljava/lang/Class;)Lcom/android/server/SystemService;
+
+    move-object/from16 v0, p0
+
+    iget-object v7, v0, Lcom/android/server/ServerThread;->mSystemServiceManager:Lcom/android/server/SystemServiceManager;
+
+    const/16 v9, 0x1f4
+
+    invoke-virtual {v7, v9}, Lcom/android/server/SystemServiceManager;->startBootPhase(I)V
+
     :try_start_5d
     invoke-virtual/range {v159 .. v159}, Lcom/android/server/wm/WindowManagerService;->systemReady()V
     :try_end_5d
