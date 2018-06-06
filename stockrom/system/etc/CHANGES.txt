@@ -1,0 +1,244 @@
+===================================
+Since Sun Oct 12 03:29:15 UTC 2014
+===================================
+
+   * device/oppo/msm8974-common
+f2d8f5f msm8974: Re-add Listen files to prop list
+a7c3071 msm8974: Add resampler lib to props
+
+   * frameworks/av
+bced0f7 stagefright: Fix CTS failures
+743104d stagefright: Scan for ".ts" files
+
+   * hardware/qcom/audio-caf
+7d1d8bf hal: Add support for listen playback concurrency
+
+   * kernel/oneplus/msm8974
+e532e5c asoc: wcd9320: Fix SVA runtime PM
+401904a ASoC: msm-lsm-client: Handle close gracefully
+ed1a73d ASoC: msm: qdsp6v2: avoid null pointer dereference
+3094e97 ASoC: core: Add compat ioctl support for listen driver
+5ece665 ASoC: msm: qdsp6v2: Fix event status issue for Sound Model V1
+8c04f2e ASoC : msm: Add IOCTL for Listen LookAhead Buffering
+9ad69f5 ASoC: msm: Add MultiKeyword support for Listen
+6cc6de3 ASoC: msm: metaInfo support in acdb kernel driver
+f6d0578 ASoC: wcd9320: Set Audio MAD IIR coefficients from ACDB
+cd3d4e8 ALSA: control: Fix missing VOLATILE flag at creating controls
+3b903fc PM / devfreq: governor_bw_hwmon: Add suspend/resume support
+242d353 ion: Drop cache operation after zeroing
+
+   * packages/apps/Settings
+55ae419 Development: Root for apps is unavailable if the su daemon isn't running
+c041b5e Settings: Improve AOSP JA translation
+
+   * system/core
+551f044 audio: Unhide MP2/WMA enums
+
+===================================
+Since Sat Oct 11 02:15:12 UTC 2014
+===================================
+
+   * bootable/recovery-cm
+7e99b3c sr: check if touch selections fall within menu area
+
+   * build
+b5d338e repopick: support specifying a range of commits to pick
+1e392d7 Edify: Add/Update abort messages for some asserts
+
+   * device/oppo/msm8974-common
+02b14dc gps: Lower debug level
+
+   * frameworks/base
+cca7647 AudioService: Reduce volume to safe level when headset is connected (2/2)
+a8c9061 NetworkController: Extra WIMAX icon handling
+
+   * kernel/oneplus/msm8974
+3b1ce1d bacon/find7: Enable optimized AES and SHA1 routines
+1f7b90f x9076: Disable CABC when brightness is over 225
+
+   * packages/apps/CMWallpapers
+3309b54 CMWallpaper: respect suggested size
+
+   * packages/apps/ContactsCommon
+7d1d1b3 contacts: don't relay on unlocalized strings
+
+   * packages/apps/Settings
+df97267 Settings: Reduce volume to safe level when headset is connected (1/2)
+f95543d settings: Avoid NPE in NfcTrigger when device doesn't support NFC
+6833e8c setting: Always remove Left-handed mode setting for non-phones
+b719968 cmhw: Use hardware's default value for display features
+c50556b Open app when clicking on icon in App Info screen
+
+   * system/core
+d5b863a System/core: Start qrng daemon upon power up
+
+===================================
+Since Fri Oct 10 01:26:08 UTC 2014
+===================================
+
+   * frameworks/av
+0c98ffb stagefright: STEVE BUYS DONUTS
+
+   * frameworks/base
+0128d90 base: display live wallpaper settings instead of wallpaper picker
+e9a85e9 quiethours: fix vibration logic
+193c5ed Customisable location tile(2/2)
+
+   * hardware/ril
+523ebb2 Weaken external rild symbol.
+
+   * kernel/oneplus/msm8974
+5ca4a2d msm8974: Adjust ROI horizonal alignment to 4 pixels
+
+   * packages/apps/Camera2
+6d70ed5 Camera: Make popup menus consistent
+91b71ba Camera: Cleanup qcom resources
+2648013 Camera: Add ISO values for sony devices
+
+   * packages/apps/Settings
+4da3535 Customisable location tile(1/2)
+
+   * vendor/cm
+54b7fdb fixed Lycamobile APNs
+37d1e15 corrected Beeline UA apn
+b42943f added Afghanistan, Sri Lanka, Iraq, Kuwait apns
+4f68792 corrected Yota APN
+eee8183 updated NOS/MEO apn names
+9aaa2b1 cleanup: Spain APNs
+fd6bf3b added Africell APNs, moved Movistar PA APN
+a7fe3aa fixed Bouygues APNs
+1e628bf add/cleaned apn for Moldova/Poland
+eee4c81 Remove duplicate <!-- Azerbaijan -->
+
+===================================
+Since Thu Oct  9 01:47:09 UTC 2014
+===================================
+
+   * external/f2fs-tools
+4f5a66a fibmap: fix void conflicting with dedupe
+65040c5 f2fstat: fix command-line options
+a0c8a0b f2fs-tools: remove printf warnings
+99b0cb5 f2fs-tools: show version on all tools
+d834ae7 f2fs-tools: add support for building for android
+
+   * external/sqlite
+e994ed6 Revert "Upgrade to SQLite 3.8.6"
+
+   * external/wpa_supplicant_8
+b76a82e hostapd_cli: Use os_exec() for action script execution
+8e575d9 wpa_cli: Use os_exec() for action script execution
+5ed77d8 Add os_exec() helper to run external programs
+
+   * external/wpa_supplicant_8_ti
+40b310f hostapd_cli: Use os_exec() for action script execution
+e465cfb wpa_cli: Use os_exec() for action script execution
+14ac6a4 Add os_exec() helper to run external programs
+
+   * frameworks/av
+a667d25 libmedia: Add flag for non-native FAST tracks.
+
+   * hardware/qcom/audio
+68d0fd7 hal: Limit MP2 and WMA offload to 8226/8974 devies only
+fef19c5 audio: Add support for offloading MPEG2 and WMA
+
+   * hardware/qcom/audio-caf
+1f65db1 Only change usecase to ultra-low-latency-playback if it's enabled
+
+   * packages/apps/Camera2
+b25459b Camera2: Revert ZSL burst mode
+
+   * vendor/cm
+c88de7a Changelog: Add M11, remove M6
+
+===================================
+Since Tue Oct  7 11:14:17 UTC 2014
+===================================
+
+   * bootable/recovery
+5d9a704 cwm: Declare additional dependencies instead of relying on build hax
+
+   * bootable/recovery-cm
+aa0a066 sr: Declare additional dependencies instead of relying on build hax
+
+   * build
+71f0b84 build: recovery: Remove INTERNAL_RECOVERY_FILES
+
+   * device/oneplus/bacon
+ad268d4 bacon: Audio output latency optimization
+
+   * device/oppo/msm8974-common
+874a498 msm8974: Enable WMA DSP codecs
+c8fb1fe msm8974: Enable multiaac codec
+336c677 msm8974: Move audio_policy.conf out of common repo
+
+   * external/exfat
+11f589a exfat: Fix symlink generation
+
+   * external/ffmpeg
+755d697 ffmpeg: Add license notice files
+
+   * external/stagefright-plugins
+c29857d stagefright-plugins: Allow use of HW codecs for Windows Media
+6bd8525 stagefright-plugins: Audio output port reconfiguration support
+
+   * frameworks/av
+f55dc4e stagefright: Resolve turf war between FFMPEG and mm-parser
+8652041 audio: Audio resampler support for 192Khz playback
+cff76de stagefright: Use multiaac decoder for multiaac :)
+bf1690b stagefright: More high-resolution audio support
+0ea7bfd audioflinger: Allow FAST tracks for any supported sample rate
+06392dd av: audioflinger: Fix SRS build
+
+   * frameworks/base
+cccecea wlan: Modify sequence of events sent during DHCP phase.
+68980c4 Wifi: Handle P2P-REMOVE-AND-REFORM-GROUP event in GroupNegotiationState
+ff9ee91 Wi-Fi: Set BTCOEXMODE_DISABLED irrespective of BT's connection state
+3e94615 P2P: Disable 5GHz channels in 2.4 GHz only mode
+c1976a3 Wifi: fix auto connect policy for forgetNetwork
+1bcdd61 Wifi: wifi not connecting, once the APN gets disabled state
+876c709 WIFI: FIX wifi not auto-connect issue.
+bd08711 WiFi: Fix data2Wifi caused not enableAllNetworks.
+f2b5d65 P2P: Change supplicant scan intervel during WFD session
+f769f4c Wifi: Add a feature to control wifi auto connect.
+29cb517 P2P:initiate provisioning on persistant group removed.
+73869eb SystemUI: fix nav bar arrow keys for RTL locales
+
+   * frameworks/native
+bf9b662 omx: Add nBitsPerSample parameter for FLAC
+
+   * hardware/qcom/audio-caf
+7a4e382 hal: Output latency optimization
+6f374f0 policy_hal: Update offload restrictions
+
+   * hardware/qcom/display-caf-new
+0dc9072 overlay: Fix building when post-processing is enabled
+
+   * hardware/ril
+5d760e3 rild: Unbreak multi-SIM socket name
+
+   * kernel/oneplus/msm8974
+24038cd msm8974: Add ultra-low-latency audio instance
+
+   * packages/apps/Camera2
+c81ed99 Camera: Change copy right year back to 2012
+
+   * packages/apps/DSPManager
+eda8fac audio_effects.conf - Add loudness enhancer
+
+   * packages/apps/DeskClock
+09ca6d3 Alarms: Fallback to defualt when uri is invalid
+
+   * packages/apps/Settings
+8f4197d Settings: Set untranslatables
+87147e0 Settings: cleanup new profiles UI
+742f136 settings: allow scroll in LED settings's color dialog
+
+   * packages/services/Telephony
+f823f5e TeleService: fix event settings NPE
+
+   * vendor/cm
+12edd46 Update APNs for b-mobile (440,10,Japan)
+
+   * external/koush/ion
+8001d15 Ion: Update supported media types
+
