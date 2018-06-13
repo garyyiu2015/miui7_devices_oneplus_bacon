@@ -22,9 +22,13 @@ local-miui-removed-apps :=
 local-miui-modified-apps :=
 
 # All vendor apks needed
-local-phone-apps := 
+local-phone-apps := BasicDreams Bluetooth Camera2 CellBroadcastReceiver CertInstaller Galaxy4 HoloSpiralWallpaper HTMLViewer \
+		KeyChain LiveWallpapers MagicSmokeWallpapers NfcNci NoiseField PacProcessor PhaseBeam PicoTts PrintSpooler Stk \
+		UserDictionaryProvider VisualizationWallpapers WAPPushManager 
 
-local-phone-priv-apps := 
+local-phone-priv-apps := BackupRestoreConfirmation DefaultContainerService FusedLocation \
+		ExternalStorageProvider InputDevices OneTimeInitializer ProxyHandler SharedStorageBackup \
+		Shell Tag VpnDialogs 
 
 local-density := XXHDPI
 
@@ -44,3 +48,5 @@ local-after-zip:=
 include $(PORT_BUILD)/porting.mk
 
 adjust_apps_location:
+	# copy files
+	cp miui/boot.img $(ZIP_DIR)/boot.img
