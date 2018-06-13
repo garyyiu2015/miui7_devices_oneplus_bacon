@@ -52,3 +52,10 @@ adjust_apps_location:
 	# copy files
 	cp miui/boot.img $(ZIP_DIR)/boot.img
 	cp -a -rf miui/system/* $(ZIP_DIR)/system/
+	# fix xposed install
+	rm -rf $(ZIP_DIR)/system/bin/app_process_vendor
+	cp -rf stockrom/system/bin/app_process $(ZIP_DIR)/system/bin/app_process
+	rm -rf $(ZIP_DIR)/system/bin/debuggerd_vendor
+	cp -rf stockrom/system/bin/debuggerd $(ZIP_DIR)/system/bin/debuggerd
+	rm -rf $(ZIP_DIR)/system/bin/dexopt_vendor
+	cp -rf stockrom/system/bin/dexopt $(ZIP_DIR)/system/bin/dexopt
