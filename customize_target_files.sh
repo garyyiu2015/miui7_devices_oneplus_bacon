@@ -7,3 +7,6 @@ MIUI_DIR=$PWD/miui
 
 # remove all odexs
 find $TARGET_FILES_DIR -name "*.odex" |xargs rm -rf
+
+# copy files
+cp -f $MIUI_DIR/file_contexts $TARGET_FILES_DIR/META/
