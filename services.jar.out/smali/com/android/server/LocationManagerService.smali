@@ -1655,10 +1655,6 @@
     .prologue
     const/4 v2, 0x0
 
-    invoke-static {p1}, Lcom/android/server/LocationManagerServiceInjector;->locationSanitized(Landroid/location/Location;)Landroid/location/Location;
-
-    move-result-object p1
-
     .line 1895
     if-nez p2, :cond_1
 
@@ -2483,6 +2479,10 @@
     move-result v2
 
     if-eqz v2, :cond_3
+
+    invoke-static {p1}, Lcom/android/server/LocationManagerServiceInjector;->locationSanitized(Landroid/location/Location;)Landroid/location/Location;
+
+    move-result-object p1
 
     .line 2220
     if-nez p2, :cond_2
@@ -4281,6 +4281,14 @@
 
     .line 477
     :cond_6
+    const-string v2, "com.android.location.service.v3.NetworkLocationProvider"
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/server/LocationManagerService;->mLocationHandler:Lcom/android/server/LocationManagerService$LocationWorkerHandler;
+
+    invoke-static {v2, v3}, Lcom/android/server/LocationManagerServiceInjector;->createAndBindLP(Ljava/lang/String;Landroid/os/Handler;)V
+
     return-void
 
     .line 402
@@ -4639,14 +4647,6 @@
     .line 1593
     .end local v2    # "provider":Ljava/lang/String;
     :cond_5
-    const-string v2, "com.android.location.service.v3.NetworkLocationProvider"
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/android/server/LocationManagerService;->mLocationHandler:Lcom/android/server/LocationManagerService$LocationWorkerHandler;
-
-    invoke-static {v2, v3}, Lcom/android/server/LocationManagerServiceInjector;->createAndBindLP(Ljava/lang/String;Landroid/os/Handler;)V
-
     return-void
 .end method
 
