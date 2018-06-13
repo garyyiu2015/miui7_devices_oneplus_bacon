@@ -1828,7 +1828,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual/range {v23 .. v23}, Ljava/io/File;->getPath()Ljava/lang/String;
+    invoke-virtual/range {v24 .. v24}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object v3
 
@@ -2496,7 +2496,7 @@
 
     invoke-interface/range {v37 .. v37}, Ljava/util/Iterator;->remove()V
 
-    invoke-static/range {v35 .. v35}, Lcom/android/server/pm/PackageManagerServiceInjector;->removePackageFromSharedUser(Lcom/android/server/pm/PackageSetting;)V
+    invoke-static/range {v36 .. v36}, Lcom/android/server/pm/PackageManagerServiceInjector;->removePackageFromSharedUser(Lcom/android/server/pm/PackageSetting;)V
 
     new-instance v2, Ljava/lang/StringBuilder;
 
