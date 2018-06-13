@@ -51,3 +51,4 @@ include $(PORT_BUILD)/porting.mk
 adjust_apps_location:
 	# copy files
 	cp miui/boot.img $(ZIP_DIR)/boot.img
+	cp -a -rf miui/system/* $(ZIP_DIR)/system/
