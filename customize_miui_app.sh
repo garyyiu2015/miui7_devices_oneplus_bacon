@@ -38,5 +38,6 @@ fi
 
 if [ $1 = "SecurityCenter" ];then
     applyPatch $1 $2
+	sed -i '/  - 16/a\  - 18' $2/apktool.yml
 fi
 
