@@ -20,3 +20,6 @@ cp -r $MIUI_DIR/rpm.mbn $TARGET_FILES_DIR/BOOTABLE_IMAGES/
 cp -r $MIUI_DIR/sbl1.mbn $TARGET_FILES_DIR/BOOTABLE_IMAGES/
 cp -r $MIUI_DIR/static_nvbk.bin $TARGET_FILES_DIR/BOOTABLE_IMAGES/
 cp -r $MIUI_DIR/tz.mbn $TARGET_FILES_DIR/BOOTABLE_IMAGES/
+
+# remove stockrom fonts, use miui fonts
+rm -rf $TARGET_FILES_DIR/system/fonts/*
