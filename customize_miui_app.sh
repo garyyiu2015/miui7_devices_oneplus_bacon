@@ -57,3 +57,7 @@ fi
 if [ $1 = "DeskClock" ];then
     changeID $1
 fi
+
+if [ $1 = "DownloadProvider" ];then
+    changeID $1
+fi
