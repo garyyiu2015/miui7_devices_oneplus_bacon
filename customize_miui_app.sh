@@ -33,6 +33,7 @@ function changeID () {
 }
 
 if [ $1 = "miuisystem" ];then
+    applyPatch $1 $2
     cp $1/bacon.xml $2/assets/device_features/
 fi
 
@@ -43,3 +44,6 @@ if [ $1 = "SecurityCenter" ];then
 	sed -i '/- 18/a\sdkInfo:\n  minSdkVersion: '\''19'\''\n  targetSdkVersion: '\''23'\''' $2/apktool.yml
 fi
 
+if [ $1 = "ThemeManager" ];then
+    applyPatch $1 $2
+fi
