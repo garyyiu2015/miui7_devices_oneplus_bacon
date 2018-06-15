@@ -33,6 +33,7 @@ function changeID () {
 }
 
 if [ $1 = "miuisystem" ];then
+    sed -i '/  - 16/a\  - 17' $2/apktool.yml
     applyPatch $1 $2
     cp $1/bacon.xml $2/assets/device_features/
 fi
