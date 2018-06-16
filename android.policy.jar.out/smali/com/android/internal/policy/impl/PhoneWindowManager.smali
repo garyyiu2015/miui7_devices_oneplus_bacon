@@ -5523,9 +5523,9 @@
 
     invoke-virtual/range {p0 .. p1}, Lcom/android/internal/policy/impl/PhoneWindowManager;->getExtraSystemUiVisibility(Landroid/view/WindowManagerPolicy$WindowState;)I
 
-    move-result v18
+    move-result v19
 
-    or-int p3, p3, v18
+    or-int p3, p3, v19
 
     .line 6202
     return p3

@@ -5876,8 +5876,6 @@
 
     iput-boolean v0, p0, Landroid/app/Activity;->mCalled:Z
 
-    invoke-static {p0}, Landroid/app/ActivityInjector;->checkAccessControl(Landroid/app/Activity;)V
-
     return-void
 .end method
 
@@ -5928,6 +5926,8 @@
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/app/Activity;->mCalled:Z
+
+    invoke-static {p0}, Landroid/app/ActivityInjector;->checkAccessControl(Landroid/app/Activity;)V
 
     .line 1135
     return-void
