@@ -25,3 +25,10 @@ if [ $2 = "$BUILD_OUT/android.policy" ]
 then
 	applyPatch "overlay/android.policy"
 fi
+
+if [ $2 = "$BUILD_OUT/framework" ]
+then
+	# use Miui Editor
+	cp -rf $BUILD_OUT/framework_miui/smali/android/widget/Editor* $BUILD_OUT/framework/smali/android/widget/
+	applyPatch "overlay/framework"
+fi
