@@ -1423,6 +1423,8 @@
 
     .line 752
     :cond_0
+    const/high16 v3, 0x4000000
+
     invoke-virtual {p0}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v0

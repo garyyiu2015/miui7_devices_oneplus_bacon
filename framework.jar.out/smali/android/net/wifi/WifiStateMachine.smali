@@ -8503,7 +8503,7 @@
 .end method
 
 .method private setScanResults()V
-    .locals 33
+    .locals 41
 
     .prologue
     .line 1946
@@ -8541,6 +8541,12 @@
 
     .line 1958
     .local v26, "sid":I
+    const/16 v33, 0x0
+
+    .local v33, "wpsState":Ljava/lang/String;
+    const/16 v34, 0x0
+
+    .local v34, "wpsDeviceName":Ljava/lang/String;
     :cond_0
     move-object/from16 v0, p0
 
@@ -8753,6 +8759,20 @@
 
     .line 1994
     .local v14, "flagLen":I
+    const-string v35, "wps_state="
+
+    invoke-virtual/range {v35 .. v35}, Ljava/lang/String;->length()I
+
+    move-result v35
+
+    .local v35, "wpsStateStrLength":I
+    const-string v36, "wps_device_name="
+
+    invoke-virtual/range {v36 .. v36}, Ljava/lang/String;->length()I
+
+    move-result v36
+
+    .local v36, "wpsDeviceNameStrLength":I
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v22
@@ -9186,7 +9206,7 @@
 
     move-result v29
 
-    if-eqz v29, :cond_6
+    if-eqz v29, :cond_miui_1
 
     .line 2035
     :cond_e
@@ -9309,9 +9329,9 @@
 
     const/4 v3, 0x0
 
-    const/16 v30, 0x0
+    const/16 v33, 0x0
 
-    const/16 v31, 0x0
+    const/16 v34, 0x0
 
     goto/16 :goto_5
 
@@ -9379,8 +9399,89 @@
     .restart local v19    # "len$":I
     .restart local v21    # "lines":[Ljava/lang/String;
     .restart local v22    # "now":J
-    :cond_13
+    :cond_miui_1
     :try_start_a
+    const-string v37, "wps_state="
+
+    move-object/from16 v0, v20
+
+    move-object/from16 v1, v37
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v37
+
+    if-eqz v37, :cond_miui_0
+
+    new-instance v33, Ljava/lang/String;
+
+    invoke-virtual/range {v20 .. v20}, Ljava/lang/String;->getBytes()[B
+
+    move-result-object v37
+
+    invoke-virtual/range {v20 .. v20}, Ljava/lang/String;->length()I
+
+    move-result v39
+
+    sub-int v39, v39, v35
+
+    move-object/from16 v0, v33
+
+    move-object/from16 v1, v37
+
+    move-object/from16 v40, v3
+    
+    move/from16 v2, v35
+
+    move/from16 v3, v39
+
+    invoke-direct {v0, v1, v2, v3}, Ljava/lang/String;-><init>([BII)V
+
+    move-object/from16 v3, v40
+
+    goto/16 :goto_5
+
+    :cond_miui_0
+    const-string v34, "wps_device_name="
+
+    move-object/from16 v0, v20
+
+    move-object/from16 v1, v37
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v37
+
+    if-eqz v37, :cond_6
+
+    new-instance v34, Ljava/lang/String;
+
+    invoke-virtual/range {v20 .. v20}, Ljava/lang/String;->getBytes()[B
+
+    move-result-object v37
+
+    invoke-virtual/range {v20 .. v20}, Ljava/lang/String;->length()I
+
+    move-result v39
+
+    sub-int v39, v39, v36
+
+    move-object/from16 v0, v34
+
+    move-object/from16 v1, v37
+
+    move-object/from16 v40, v3
+
+    move/from16 v2, v36
+
+    move/from16 v3, v39
+
+    invoke-direct {v0, v1, v2, v3}, Ljava/lang/String;-><init>([BII)V
+
+    move-object/from16 v3, v40
+
+    goto/16 :goto_5
+    :cond_13
     monitor-exit v30
     :try_end_a
     .catchall {:try_start_a .. :try_end_a} :catchall_0
