@@ -32,4 +32,7 @@ function changeID () {
     cd -
 }
 
+if [ $1 = "miuisystem" ];then
+    cp $1/A0001.xml $2/assets/device_features/
+fi
 

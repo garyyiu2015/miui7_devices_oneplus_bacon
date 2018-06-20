@@ -19,7 +19,7 @@ local-modified-jars :=
 # All apks from MIUI
 local-miui-removed-apps := 
 
-local-miui-modified-apps := MiuiHome
+local-miui-modified-apps := MiuiHome miuisystem
 
 # All vendor apks needed
 local-phone-apps := BasicDreams Bluetooth Camera2 CellBroadcastReceiver CertInstaller Galaxy4 HoloSpiralWallpaper HTMLViewer \
