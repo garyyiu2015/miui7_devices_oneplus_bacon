@@ -11,3 +11,6 @@ cp -f $MIUI_DIR/file_contexts $TARGET_FILES_DIR/META/
 cp -r $MIUI_DIR/*.mbn $TARGET_FILES_DIR/META/
 cp -r $MIUI_DIR/*.bin $TARGET_FILES_DIR/META/
 cp -r $MIUI_DIR/reserve4.img $TARGET_FILES_DIR/META/
+
+# remove stockrom fonts, use miui fonts
+rm -rf $TARGET_FILES_DIR/system/fonts/*
