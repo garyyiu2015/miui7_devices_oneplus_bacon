@@ -34,6 +34,7 @@ function changeID () {
 
 if [ $1 = "miuisystem" ];then
     sed -i '/  - 16/a\  - 17' $2/apktool.yml
+    applyPatch $1 $2
     cp $1/A0001.xml $2/assets/device_features/
 fi
 
@@ -42,4 +43,8 @@ if [ $1 = "SecurityCenter" ];then
 	sed -i '/  - 16/a\  - 18' $2/apktool.yml
 	#Fix MIUI SecurityCenter icon dislocation
 	sed -i '/- 18/a\sdkInfo:\n  minSdkVersion: '\''19'\''\n  targetSdkVersion: '\''23'\''' $2/apktool.yml
+fi
+
+if [ $1 = "ThemeManager" ];then
+    applyPatch $1 $2
 fi
