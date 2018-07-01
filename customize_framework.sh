@@ -30,5 +30,7 @@ if [ $2 = "$BUILD_OUT/framework" ]
 then
 	# use Miui Editor
 	cp -rf $BUILD_OUT/framework_miui/smali/android/widget/Editor* $BUILD_OUT/framework/smali/android/widget/
+	# fix signal strength display
+	cp -rf overlay/framework/* $BUILD_OUT/framework
 	applyPatch "overlay/framework"
 fi
