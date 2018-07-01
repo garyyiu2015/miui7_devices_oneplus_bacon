@@ -19,7 +19,8 @@ local-modified-jars :=
 # All apks from MIUI
 local-miui-removed-apps := 
 
-local-miui-modified-apps := MiuiHome miuisystem SecurityCenter ThemeManager TeleService DeskClock DownloadProvider MiuiSuperMarket
+local-miui-modified-apps := MiuiHome miuisystem SecurityCenter ThemeManager TeleService DeskClock DownloadProvider MiuiSuperMarket \
+		MiuiSystemUI
 
 # All vendor apks needed
 local-phone-apps := BasicDreams Bluetooth Camera2 CellBroadcastReceiver CertInstaller Galaxy4 HoloSpiralWallpaper HTMLViewer \
