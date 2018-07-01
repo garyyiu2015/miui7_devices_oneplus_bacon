@@ -25,7 +25,7 @@ local-miui-modified-apps := MiuiHome miuisystem SecurityCenter ThemeManager Tele
 # All vendor apks needed
 local-phone-apps := BasicDreams Bluetooth Camera2 CellBroadcastReceiver CertInstaller Galaxy4 HoloSpiralWallpaper HTMLViewer \
 		KeyChain LiveWallpapers MagicSmokeWallpapers NfcNci NoiseField PacProcessor PhaseBeam PicoTts PrintSpooler Stk \
-		UserDictionaryProvider VisualizationWallpapers WAPPushManager 
+		UserDictionaryProvider VisualizationWallpapers WAPPushManager Find7Parts
 
 local-phone-priv-apps := BackupRestoreConfirmation DefaultContainerService FusedLocation \
 		ExternalStorageProvider InputDevices OneTimeInitializer ProxyHandler SharedStorageBackup \
