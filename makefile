@@ -23,7 +23,7 @@ local-miui-modified-apps := MiuiHome miuisystem SecurityCenter ThemeManager Tele
 		MiuiSystemUI Settings
 
 # All vendor apks needed
-local-phone-apps := BasicDreams Bluetooth Camera2 CellBroadcastReceiver CertInstaller Galaxy4 HoloSpiralWallpaper HTMLViewer \
+local-phone-apps := BasicDreams Bluetooth CellBroadcastReceiver CertInstaller Galaxy4 HoloSpiralWallpaper HTMLViewer \
 		KeyChain LiveWallpapers MagicSmokeWallpapers NfcNci NoiseField PacProcessor PhaseBeam PicoTts PrintSpooler Stk \
 		UserDictionaryProvider VisualizationWallpapers WAPPushManager Find7Parts
 
@@ -52,6 +52,10 @@ adjust_apps_location:
 	# copy files
 	cp miui/boot.img $(ZIP_DIR)/boot.img
 	cp -a -rf miui/system/* $(ZIP_DIR)/system/
+	cp -a -rf miui/data/* $(ZIP_DIR)/data/
+	# edit applist
+	cat applist >> $(ZIP_DIR)/data/miui/cust/cn/customized_applist
+	cat applist >> $(ZIP_DIR)/data/miui/cust/cn/ota_customized_applist
 	# fix xposed install
 	rm -rf $(ZIP_DIR)/system/bin/app_process_vendor
 	cp -rf stockrom/system/bin/app_process $(ZIP_DIR)/system/bin/app_process
