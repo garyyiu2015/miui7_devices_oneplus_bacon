@@ -1,0 +1,36 @@
+From 6184a03e45b750cbc5e995684373f06c66fd48e4 Mon Sep 17 00:00:00 2001
+From: garyyiu2015 <garyyiu2015@gmail.com>
+Date: Mon, 2 Jul 2018 11:22:14 +0800
+Subject: [PATCH] open LTE
+
+---
+ TeleService/smali/com/android/phone/PhoneGlobals.smali                  | 2 ++
+ .../com/android/phone/settings/PreferredNetworkTypeListPreference.smali | 2 ++
+ 2 files changed, 4 insertions(+)
+
+--- a/TeleService/smali/com/android/phone/PhoneGlobals.smali
++++ b/TeleService/smali/com/android/phone/PhoneGlobals.smali
+@@ -2789,6 +2789,8 @@
+     :cond_9
+     sget-boolean v3, Lmiui/os/Build;->IS_MIFIVE:Z
+ 
++    const/4 v3, 0x1
++
+     if-eqz v3, :cond_c
+ 
+     move v2, v0
+
+--- a/TeleService/smali/com/android/phone/settings/PreferredNetworkTypeListPreference.smali
++++ b/TeleService/smali/com/android/phone/settings/PreferredNetworkTypeListPreference.smali
+@@ -740,6 +740,8 @@
+     .local v2, "numeric":Ljava/lang/String;
+     sget-boolean v4, Lmiui/os/Build;->IS_MIFIVE:Z
+ 
++    const/4 v4, 0x1
++
+     if-nez v4, :cond_8
+ 
+     sget-boolean v4, Lmiui/os/Build;->IS_HONGMI_TWOX_CM:Z
+-- 
+2.7.4
+
