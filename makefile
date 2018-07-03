@@ -56,6 +56,9 @@ adjust_apps_location:
 	# edit applist
 	cat applist >> $(ZIP_DIR)/data/miui/cust/cn/customized_applist
 	cat applist >> $(ZIP_DIR)/data/miui/cust/cn/ota_customized_applist
+	# use the Chinese language
+	sed -i 's#ro.product.locale.language=en#ro.product.locale.language=zh#g' $(ZIP_DIR)/system/build.prop
+	sed -i 's#ro.product.locale.region=US#ro.product.locale.region=CN#g' $(ZIP_DIR)/system/build.prop
 	# fix xposed install
 	rm -rf $(ZIP_DIR)/system/bin/app_process_vendor
 	cp -rf stockrom/system/bin/app_process $(ZIP_DIR)/system/bin/app_process
