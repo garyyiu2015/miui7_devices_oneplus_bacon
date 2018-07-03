@@ -14,3 +14,5 @@ cp -r $MIUI_DIR/reserve4.img $TARGET_FILES_DIR/META/
 
 # remove stockrom fonts, use miui fonts
 rm -rf $TARGET_FILES_DIR/system/fonts/*
+# remove sina weibo
+rm -rf $TARGET_FILES_DIR/DATA/miui/app/customized/ota-partner-Weibo.apk
