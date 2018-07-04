@@ -1,41 +1,39 @@
-From 2ba525ef1f28e4d5dd514df681977b4da36f3246 Mon Sep 17 00:00:00 2001
+From 0e51d15d613ad0c1e9348378da4b47571bef1dca Mon Sep 17 00:00:00 2001
 From: garyyiu2015 <garyyiu2015@gmail.com>
-Date: Wed, 13 Jun 2018 22:13:46 +0800
+Date: Tue, 3 Jul 2018 22:30:43 +0800
 Subject: [PATCH] root 5s to 0s
 
 ---
- .../com/miui/permcenter/root/RootApplyActivity.smali   | 18 +++++++++++++++---
- 1 file changed, 15 insertions(+), 3 deletions(-)
+ .../smali/com/miui/permcenter/root/RootApplyActivity.smali        | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
 
 --- a/SecurityCenter/smali/com/miui/permcenter/root/RootApplyActivity.smali
 +++ b/SecurityCenter/smali/com/miui/permcenter/root/RootApplyActivity.smali
-@@ -483,11 +483,23 @@
+@@ -31,11 +31,11 @@
+     .prologue
+     invoke-direct {p0}, Lcom/miui/common/base/BaseActivity;-><init>()V
  
-     iget-object v0, p0, Lcom/miui/permcenter/root/RootApplyActivity;->mPkgName:Ljava/lang/String;
+-    const/4 v0, 0x1
++    const/4 v0, 0x5
  
--    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-+    # invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+     iput v0, p0, Lcom/miui/permcenter/root/RootApplyActivity;->mCurrentStep:I
  
--    move-result v0
-+    # move-result v0
-+
-+    # if-eqz v0, :cond_0
-+
-+    invoke-static {p0, v0}, Lcom/miui/common/utils/PackageUtils;->loadAppLabel(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/CharSequence;
+-    const/4 v0, 0x5
++    const/4 v0, 0x1
  
--    if-eqz v0, :cond_0
-+    move-result-object v0
-+
-+    iput-object v0, p0, Lcom/miui/permcenter/root/RootApplyActivity;->mAppLabel:Ljava/lang/CharSequence;
-+
-+    iget-object v0, p0, Lcom/miui/permcenter/root/RootApplyActivity;->mHandler:Landroid/os/Handler;
-+
-+    invoke-virtual {v0, v4}, Landroid/os/Handler;->removeMessages(I)V
-+
-+    invoke-direct {p0}, Lcom/miui/permcenter/root/RootApplyActivity;->acceptRootApply()V
+     iput v0, p0, Lcom/miui/permcenter/root/RootApplyActivity;->mAutoNextStepTime:I
  
+@@ -492,6 +492,10 @@
      invoke-virtual {p0}, Lcom/miui/permcenter/root/RootApplyActivity;->finish()V
  
+     :goto_0
++    iget-object v0, p0, Lcom/miui/permcenter/root/RootApplyActivity;->mAcceptButton:Landroid/widget/Button;
++
++    invoke-virtual {v0}, Landroid/widget/Button;->performClick()Z
++
+     return-void
+ 
+     :cond_0
 -- 
 2.7.4
 
