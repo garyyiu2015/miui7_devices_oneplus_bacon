@@ -20,7 +20,7 @@ local-modified-jars :=
 local-miui-removed-apps := 
 
 local-miui-modified-apps := MiuiHome miuisystem SecurityCenter ThemeManager TeleService DeskClock DownloadProvider MiuiSuperMarket \
-		MiuiSystemUI Settings
+		MiuiSystemUI Settings Mms
 
 # All vendor apks needed
 local-phone-apps := BasicDreams Bluetooth CellBroadcastReceiver CertInstaller Galaxy4 HoloSpiralWallpaper HTMLViewer \

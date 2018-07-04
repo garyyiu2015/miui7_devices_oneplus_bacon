@@ -77,3 +77,7 @@ if [ $1 = "Settings" ];then
     sed -i '/  - 17/a\  - 18' $2/apktool.yml
     applyPatch $1 $2
 fi
+
+if [ $1 = "Mms" ];then
+    changeID $1
+fi
