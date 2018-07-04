@@ -79,5 +79,6 @@ if [ $1 = "Settings" ];then
 fi
 
 if [ $1 = "Mms" ];then
+	sed -i '/  - 16/a\  - 18' $2/apktool.yml
     changeID $1
 fi
